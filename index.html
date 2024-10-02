@@ -17,7 +17,7 @@
     bg-center bg-cover">
         <div class="w-[100%] h-[100vh] bg-[rgba(0,0,0,0.5)]">
             <header class="max-w-[1170px] mx-auto">
-                <div class="grid sm:grid-cols-2 grid-cols-[30%_auto] px-[10px] item-center">
+                <div class="grid sm:grid-cols-2 grid-cols-[10%_auto] px-[10px] item-center">
                     <figure>
                         <img src="Netflix_Logo_PMS.png" class="w-[148px]" alt="">
                     </figure>
@@ -43,7 +43,7 @@
                     membership.</h4>
             </div>
 
-            <div class="max-w-[700px] mx-auto   flex gap-[20px]">
+            <div class="max-w-[700px] mx-auto flex justify-evenly ">
                 <form class=" grid-cols-[70%_auto]">
                     <input type="text"
                         class="border-[2px] h-[50px] border-[#ccc] bg-[transparent] sm:px-[50px] rounded-[5px] pl-[20px]"
@@ -59,9 +59,8 @@
 
 
 
-    <section class="w-[100%] border-t-[8px] bg-[black] border-t-[#605d5d] sm:py-[100px] py-[50px]">
-        <div class="max-w-[1120px] mx-auto px-[15px]">
-            <div class="grid sm:grid-cols-2 grid-cols-1 items-center">
+    <section class="w-[full] border-t-[8px] bg-[black] border-t-[#605d5d] ">
+        <div class="max-w-[1120px] mx-auto px-[20px] sm:py-[100px] py-[50px] grid sm:grid-cols-2 grid-cols-1 items-center">
 
                 <div class="text-[white]">
                     <h2 class="sm:text-[50px] text-[40px]">Enjoy on your TV</h2>
@@ -73,7 +72,6 @@
                 </figure>
 
 
-            </div>
         </div>
     </section>
 
@@ -81,7 +79,7 @@
 
 
 
-    <section class="w-[100%] border-t-[8px] bg-[black] border-t-[#605d5d] sm:py-[100px] py-[50px]">
+    <section class="w-[100%] border-t-[8px] bg-[black] border-t-[#605d5d] sm:py-[50px] py-[50px]">
         <div class="max-w-[1120px] mx-auto px-[15px]">
             <div class="grid sm:grid-cols-2 grid-cols-1 items-center">
 
@@ -156,10 +154,10 @@
 
                 <div class="bg-[#2d2d2d]">
                     <div
-                        class="p-[20px] text-white text-[30px] relative border-b-[2px] border-[black] hover:bg-[rgb(78,78,78)] duration-300 cursor-pointer">
+                        class="p-[20px] text-white text-[30px] relative border-b-[2px] border-[black] hover:bg-[rgb(78,78,78)] duration-300 cursor-pointer faQuestion">
                         <h3>What is Netflix</h3><span class="absolute right-[20px] top-[15px]">+</span>
                     </div>
-                    <div class="text-white text-[20px] p-[20px]">
+                    <div class="text-white text-[20px]  scale-y-0 h-0 orogin-top">
                         <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies,
                             anime, documentaries and more – on thousands of internet-connected devices.</p>
 
@@ -222,28 +220,30 @@
 
             </div>
 
-              
+
             <div class="mt-[40px]">
 
-         <div class="text-white text-[20px] text-center"><h1>Ready to watch? Enter your email to create or restart your membership.</h1></div>
-         <div class="max-w-[500px] mx-auto mt-[40px] px-[50px]">
-            
-         <div class="  flex gap-[20px]">
-            <form class=" grid-cols-[70%_auto]">
-                <input type="text"
-                    class="border-[2px] h-[50px] border-[#ccc] bg-[transparent] sm:px-[50px] rounded-[5px] pl-[20px]"
-                    placeholder="Email Address">
-            </form>
+                <div class="text-white text-[20px] text-center">
+                    <h1>Ready to watch? Enter your email to create or restart your membership.</h1>
+                </div>
+                <div class="max-w-[500px] mx-auto mt-[40px] px-[50px]">
 
-            <button class="text-white bg-[red] sm:px-[25px] rounded-[5px] hover:bg-[blue] duration-500">Get
-                Start</button>
-        </div>
-         </div>
+                    <div class="  flex gap-[20px]">
+                        <form class=" grid-cols-[70%_auto]">
+                            <input type="text"
+                                class="border-[2px] h-[50px] border-[#ccc] bg-[transparent] sm:px-[50px] rounded-[5px] pl-[20px]"
+                                placeholder="Email Address">
+                        </form>
+
+                        <button class="text-white bg-[red] sm:px-[25px] rounded-[5px] hover:bg-[blue] duration-500">Get
+                            Start</button>
+                    </div>
+                </div>
 
 
             </div>
-            
-            
+
+
 
 
         </div>
@@ -254,6 +254,30 @@
 
 
 
+    <script>
+        let allQuestions = document.querySelectorAll(".faQuestion");
+        allQuestions.forEach((v, index) => {
+            v.addEventListener("click", () => {
+                v.nextElementSibling.classList.toggle("h-[auto]")
+                v.nextElementSibling.classList.toggle("scale-y-100")
+                v.nextElementSibling.classList.toggle("p-[20px]")
+
+
+                v.children[1].classList.toggle("rotate-45")
+                allQuestions.forEach((el, i) => {
+                    if (i !== index) {
+                        el.nextElementSibling.classList.remove("h-[auto]", "scale-y-100", "p-[20px]")
+                    }
+                })
+            })
+        })
+
+    </script>
+
 </body>
+
+
+
+
 
 </html>
